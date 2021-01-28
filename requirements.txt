@@ -1,3 +1,4 @@
 flask
 line-bot-sdk
 gunicorn==20.0.4
+numpy
