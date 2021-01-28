@@ -16,8 +16,8 @@ from linebot import (
 
 app = Flask(__name__)
 
-lineaccesstoken = 'NB2gli/J13truGWoTUHdV4RmtCdg+tQJMZilsy+gNDNKh9KqzBhoT1UJQ52uQ6io+WghT5VGLxkm6JdIlBKj9IJYD3ZEm1kGHn9smozXt76qS7nykV2dMhkdkQIzYB8EFemz7QilCcRp7m+C/wxBBQdB04t89/1O/w1cDnyilFU='
-line_bot_api = LineBotApi('5df4343c59b0042430e222166581c987')
+line_bot_api = LineBotApi('NB2gli/J13truGWoTUHdV4RmtCdg+tQJMZilsy+gNDNKh9KqzBhoT1UJQ52uQ6io+WghT5VGLxkm6JdIlBKj9IJYD3ZEm1kGHn9smozXt76qS7nykV2dMhkdkQIzYB8EFemz7QilCcRp7m+C/wxBBQdB04t89/1O/w1cDnyilFU=')
+parser = WebhookParser('5df4343c59b0042430e222166581c987')
 
 ####################### new ########################
 @app.route('/')
@@ -25,7 +25,7 @@ def index():
     return "เปิดแล้วครับ"
 
 
-@app.route("/webhook", methods=['POST'])
+@app.route("/callback", methods=['POST'])
 def callback():
     json_line = request.get_json(force=False,cache=False)
     json_line = json.dumps(json_line)
