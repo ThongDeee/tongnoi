@@ -22,10 +22,10 @@ line_bot_api = LineBotApi('5df4343c59b0042430e222166581c987')
 ####################### new ########################
 @app.route('/')
 def index():
-    return "Hello World!"
+    return "เปิดแล้วครับ"
 
 
-@app.route('/webhook', methods=['POST'])
+@app.route("/webhook", methods=['POST'])
 def callback():
     json_line = request.get_json(force=False,cache=False)
     json_line = json.dumps(json_line)
